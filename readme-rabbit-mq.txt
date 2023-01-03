@@ -13,3 +13,8 @@ sudo apt-get install rabbitmq-server -y --fix-missing
 
 ## To start Rabbit-MQ
 systemctl start rabbitmq-server
+
+## Config refresh example (from any module - then propagated via Spring Cloud Bus & Rabbit MQ)
+curl -XPOST http://192.168.64.8:42311/actuator/refresh
+
+## Also note that Cloud Config currently points to the master branch of the config repo (SpaceFourConfigRepos)
