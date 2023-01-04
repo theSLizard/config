@@ -1,10 +1,11 @@
-package io.space4.config;
+package io.space4.config.mappers;
 
 
 
+import io.space4.config.repos.CustomRepo;
+import io.space4.config.repos.CustomRepoConditionalFlag;
+import io.space4.config.repos.CustomRepoDev;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;

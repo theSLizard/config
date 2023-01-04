@@ -1,4 +1,4 @@
-package io.space4.config;
+package io.space4.config.repos;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.config.environment.Environment;
@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @ConfigurationProperties(prefix = "s4custom")
-public class CustomRepoConditionalFlag implements EnvironmentRepository, Ordered
+public class CustomRepoDev implements EnvironmentRepository, Ordered
 {
     @Override
     public Environment findOne(String application, String profile, String label)
@@ -30,9 +30,10 @@ public class CustomRepoConditionalFlag implements EnvironmentRepository, Ordered
 
     private Map<String, String> loadYourProperties() {
         return new HashMap<String, String>() {{
-            put("s4key1", "development:  custom-flag --> value-new");
-            put("s4key2", "development:  custom-flag --> Wooo-hooo - I am a custom environment config-repository !!");
-            put("s4key3", "development;  custom-flag --> Spring Rulz :D");
+            put("s4key1", "development:  value-new");
+            put("s4key2", "development:  Wooo-hooo - I am a custom environment config-repository !!");
+            put("s4key3", "development;  Spring Rulz :D");
         }};
     }
 }
+

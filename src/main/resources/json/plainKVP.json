@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "s4name": "s4key1",
+    "s4value": "value1"
+  },
+  {
+    "id": "2",
+    "s4name": "s4key2",
+    "s4value": "value2"
+  },
+  {
+    "id": "3",
+    "s4name": "s4key3",
+    "s4value": "value3-extra"
+  }
+
+]

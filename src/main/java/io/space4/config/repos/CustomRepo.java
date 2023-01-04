@@ -1,4 +1,4 @@
-package io.space4.config;
+package io.space4.config.repos;
 
 
 
