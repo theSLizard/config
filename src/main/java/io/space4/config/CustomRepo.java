@@ -13,7 +13,7 @@ import org.springframework.core.Ordered;
 import java.util.HashMap;
 import java.util.Map;
 
-@ConfigurationProperties("spring.cloud.config.server.space4")
+@ConfigurationProperties(prefix = "s4custom")
 public class CustomRepo implements EnvironmentRepository, Ordered
     {
         @Override
@@ -34,7 +34,7 @@ public class CustomRepo implements EnvironmentRepository, Ordered
 
         private Map<String, String> loadYourProperties() {
             return new HashMap<String, String>() {{
-                put("s4key1", "value1");
+                put("s4key1", "value-new");
                 put("s4key2", "Wooo-hooo - I am a custom environment config-repository !!");
                 put("s4key3", "Spring Rulz :D");
             }};
