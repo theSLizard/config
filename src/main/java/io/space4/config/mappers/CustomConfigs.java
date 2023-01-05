@@ -2,16 +2,13 @@ package io.space4.config.mappers;
 
 
 
-import io.space4.config.repos.CustomRepo;
-import io.space4.config.repos.CustomRepoConditionalFlag;
-import io.space4.config.repos.CustomRepoDev;
+import io.space4.config.environments.custom.CustomRepo;
+import io.space4.config.environments.custom.CustomRepoConditionalFlag;
+import io.space4.config.environments.custom.CustomRepoDev;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
-
-
-//@Profile("space4")
 
 @Configuration(proxyBeanMethods = false)
 public class CustomConfigs {

@@ -1,9 +1,9 @@
-package io.space4.config.repos;
+package io.space4.config.environments.custom;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.space4.config.data.entities.PlainKeyValueStore;
-import io.space4.config.service.KvpService;
+import io.space4.config.data.service.KvpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.config.environment.Environment;
@@ -17,7 +17,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@ConfigurationProperties(prefix = "s4custom")
 public class CustomRepoConditionalFlag implements EnvironmentRepository, Ordered
 {
 
@@ -30,7 +29,7 @@ public class CustomRepoConditionalFlag implements EnvironmentRepository, Ordered
         Environment environment = new Environment(application, profile);
 
         final Map<String, String> properties = loadYourProperties();
-        environment.add(new PropertySource("space4custom", properties));
+        environment.add(new PropertySource("space4dev1", properties));
         return environment;
     }
 
@@ -68,13 +67,6 @@ public class CustomRepoConditionalFlag implements EnvironmentRepository, Ordered
         }
 
         return myKVPs;
-        /*
-        return new HashMap<String, String>() {{
-            put("s4key1", "development:  custom-flag --> value-new");
-            put("s4key2", "development:  custom-flag --> Wooo-hooo - I am a custom environment config-repository !!");
-            put("s4key3", "development;  custom-flag --> Spring Rulz :D");
-        }};
-         */
 
     }
 }

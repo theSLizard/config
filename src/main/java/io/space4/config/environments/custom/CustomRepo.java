@@ -1,7 +1,4 @@
-package io.space4.config.repos;
-
-
-
+package io.space4.config.environments.custom;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.config.environment.Environment;
@@ -9,11 +6,9 @@ import org.springframework.cloud.config.environment.PropertySource;
 import org.springframework.cloud.config.server.environment.EnvironmentRepository;
 import org.springframework.core.Ordered;
 
-
 import java.util.HashMap;
 import java.util.Map;
 
-@ConfigurationProperties(prefix = "s4custom")
 public class CustomRepo implements EnvironmentRepository, Ordered
     {
         @Override
@@ -29,14 +24,13 @@ public class CustomRepo implements EnvironmentRepository, Ordered
         @Override
         public int getOrder() {
             // Define our order relative to other configuration repositories
-            return 0;
+            return 2;
         }
-
         private Map<String, String> loadYourProperties() {
             return new HashMap<String, String>() {{
                 put("s4key1", "value-new");
                 put("s4key2", "Wooo-hooo - I am a custom environment config-repository !!");
-                put("s4key3", "Spring Rulz :D");
+                put("s4key3", "Release, baby !! :D");
             }};
         }
     }

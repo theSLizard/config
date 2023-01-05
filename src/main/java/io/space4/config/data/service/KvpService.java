@@ -1,4 +1,4 @@
-package io.space4.config.service;
+package io.space4.config.data.service;
 
 import io.space4.config.mappers.PlainKvpRepository;
 import io.space4.config.data.entities.PlainKeyValueStore;
