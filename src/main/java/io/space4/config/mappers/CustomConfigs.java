@@ -21,7 +21,6 @@ public class CustomConfigs {
 
     @Bean
     @Profile("development")
-    //@ConditionalOnProperty(name="service.mock", havingValue="true")
     public CustomRepoDev customRepoDev() {
         return new CustomRepoDev();
     }
